@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Kombinasyon {
+    public static void main(String[] args){
+
+        int n,r;
+        Scanner input=new Scanner(System.in);
+
+        System.out.printf("(n,r) kombinasyon hesabı için n değerini giriniz:");
+        n=input.nextInt();
+
+        System.out.printf("(n,r) kombinasyon hesabı için r değerini giriniz:");
+        r=input.nextInt();
+
+        int total1=1;
+        int total2=1;
+        int total3=1;
+
+        for (int a= 1;a <= n; a++){
+
+            total1=total1*a;
+
+        }
+
+        for (int b= 1;b <= r; b++){
+
+            total2=total2*b;
+
+        }
+
+        for (int c= 1;c <= (n-r); c++){
+
+            total3=total3*c;
+
+        }
+        int kombinasyon=total1/(total2*total3);
+        System.out.println("("+n+","+r+") kombinasyonu:"+kombinasyon);
+    }
+}
+
